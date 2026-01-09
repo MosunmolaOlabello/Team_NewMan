@@ -1,0 +1,75 @@
+newman
+
+STSTStudentCourse
+
+□ Get All Todo Entries
+└ Get All Todo Entries
+  GET https://demo.fusio-project.org/index.php [200 OK, 2.53kB, 566ms]
+  √  Status code should be 200
+  √  Status code name should have a string
+
+□ Get All Entries
+└ Get All Entries
+  GET https://demo.fusio-project.org/index.php/ [200 OK, 2.53kB, 188ms]
+
+□ Get entry per ID
+└ Get entry per ID - Valid ID
+  GET https://demo.fusio-project.org/index.php [200 OK, 2.53kB, 178ms]
+
+└ Get entry per ID - Invalid ID(params not using TODO ID)
+  GET https://demo.fusio-project.org/ [200 OK, 2.53kB, 172ms]
+
+□ Get Books
+└ Get All Books
+  GET https://simple-books-api.glitch.me/books [200 OK, 1.16kB, 1506ms]
+
+└ Get Books by ID
+  GET https://simple-books-api.glitch.me/books/1 [200 OK, 1.06kB, 754ms]
+
+└ Get Books by Type
+  GET https://simple-books-api.glitch.me/books?type=fiction [200 OK, 1.02kB, 1174ms]
+
+□ Place a book order
+└ Place a book order - using book ID
+  POST https://simple-books-api.glitch.me/orders [401 Unauthorized, 791B, 1150ms]
+
+□ Get an order
+└ Get all orders
+  GET https://simple-books-api.glitch.me/orders [401 Unauthorized, 791B, 1208ms]
+
+└ Get an order - using orderID
+  GET https://simple-books-api.glitch.me/orders/AaX7WGCUeHH3lRwGRh57M [401 Unauthorized, 791B, 1261ms]
+
+□ Update an order
+└ Update an order
+  POST https://simple-books-api.glitch.me/orders/ [401 Unauthorized, 791B, 757ms]
+
+□ Delete an order
+└ Delete an order
+  DELETE https://simple-books-api.glitch.me/orders/rObASEWYlVrRX6cTAEgbt [401 Unauthorized, 791B, 1147ms]
+
+→ Register API Client
+  POST https://simple-books-api.glitch.me/api-clients/ [409 Conflict, 811B, 1090ms]
+
+→ Get API Status
+  GET https://simple-books-api.glitch.me/status [200 OK, 754B, 1089ms]
+
+┌─────────────────────────┬─────────────────────┬─────────────────────┐
+│                         │            executed │              failed │
+├─────────────────────────┼─────────────────────┼─────────────────────┤
+│              iterations │                   1 │                   0 │
+├─────────────────────────┼─────────────────────┼─────────────────────┤
+│                requests │                  14 │                   0 │
+├─────────────────────────┼─────────────────────┼─────────────────────┤
+│            test-scripts │                  11 │                   0 │
+├─────────────────────────┼─────────────────────┼─────────────────────┤
+│      prerequest-scripts │                   0 │                   0 │
+├─────────────────────────┼─────────────────────┼─────────────────────┤
+│              assertions │                   2 │                   0 │
+├─────────────────────────┴─────────────────────┴─────────────────────┤
+│ total run duration: 13.4s                                           │
+├─────────────────────────────────────────────────────────────────────┤
+│ total data received: 10.01kB (approx)                               │
+├─────────────────────────────────────────────────────────────────────┤
+│ average response time: 874ms [min: 172ms, max: 1506ms, s.d.: 428ms] │
+└─────────────────────────────────────────────────────────────────────┘
